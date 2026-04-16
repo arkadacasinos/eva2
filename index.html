@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="ru" class="no-scrollbar">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ева Казино. Рабочее зеркало. Официальный сайт Eva Casino в России</title>
+    <meta name="description" content="Зарегистрируйтесь на официальном сайте Eva Casino. Получайте бонусы и фриспины. Лучшие слоты, живые игры, краш игры.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=PT+Sans:wght@400;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gray: {
+                            850: '#1a1a2e',
+                            900: '#111827',
+                            1000: '#0B0B0B',
+                        },
+                        eva: {
+                            green: '#017D63',
+                            teal: '#BDD9D4',
+                            gold: '#FFD679',
+                        }
+                    },
+                    fontFamily: {
+                        unbounded: ['Unbounded', 'sans-serif'],
+                        'pt-sans': ['PT Sans', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    maxWidth: {
+                        '387': '94rem',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .bg-green-gradient {
+            background: linear-gradient(180deg, rgba(11,60,50,0.6) 0%, rgba(11,30,25,0.8) 100%);
+        }
+        
+        .game-card-shadow {
+            box-shadow: 0px 8px 0px 0px #1f2937;
+        }
+        
+        .game-card-shadow:hover {
+            box-shadow: 0px 8px 0px 0px #fb923c;
+        }
+        
+        .header-blur {
+            background: linear-gradient(to bottom, #0B0B0B 50%, transparent);
+        }
+        
+        .gold-gradient {
+            background: linear-gradient(to bottom, #fef9c3, #eab308);
+        }
+        
+        .gold-gradient-text {
+            background: linear-gradient(to bottom, #fef9c3, #eab308);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .feature-card {
+            background: linear-gradient(180deg, rgba(11,60,50,0.6) 0%, rgba(11,30,25,0.8) 100%);
+        }
+        
+        .divider-line {
+            background: linear-gradient(to right, transparent, #fde047, transparent);
+        }
+        
+        .sidebar-item:hover .sidebar-icon {
+            filter: brightness(1.2);
+        }
+        
+        .slider-container {
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .slider-container > * {
+            scroll-snap-align: start;
+        }
+        
+        .hero-section {
+            background-image: url('https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/banners/1772099132640_Welcome%20pack.png');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .slide-in {
+            animation: slideIn 0.5s ease-out forwards;
+        }
+        
+        .live-win-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .btn-gold {
+            background: linear-gradient(to bottom, #fef9c3, #eab308);
+            color: #111827;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 1rem;
+            transition: all 0.2s;
+        }
+        .btn-gold:hover {
+            background: #facc15;
+        }
+        
+        .btn-outline {
+            border: 1px solid #fde68a;
+            background: #111827;
+            color: #f9fafb;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 1rem;
+            transition: all 0.2s;
+        }
+        .btn-outline:hover {
+            border-color: #fef3c7;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 1rem;
+        }
+        
+        @media (min-width: 768px) {
+            .game-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 1.25rem;
+            }
+        }
+
+        .banner-slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 1rem;
+            padding-bottom: 0.5rem;
+        }
+        .banner-slider > div {
+            scroll-snap-align: center;
+            flex-shrink: 0;
+        }
+
+        .seo-collapsed {
+            max-height: 12rem;
+            overflow: hidden;
+        }
+        .seo-expanded {
+            max-height: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-1000 text-gray-50 font-inter antialiased">
+
+    <!-- HEADER -->
+    <header class="sticky top-0 flex h-18 w-full flex-col header-blur p-4 -mb-10" style="z-index:81">
+        <div class="flex h-full items-center justify-between gap-0 lg:gap-4">
+            <!-- Burger (desktop) -->
+            <button id="burgerBtn" class="relative cursor-pointer items-center justify-center rounded-full border-none bg-transparent p-0 outline-none hidden size-10 lg:flex">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 17 15" fill="none">
+                    <path d="M0 1.5C0 0.671573 0.671573 0 1.5 0H15.5C16.3284 0 17 0.671573 17 1.5C17 2.32843 16.3284 3 15.5 3H1.5C0.671573 3 0 2.32843 0 1.5Z" fill="#BDD9D4"/>
+                    <path d="M0 7.5C0 6.67157 0.671573 6 1.5 6H15.5C16.3284 6 17 6.67157 17 7.5C17 8.32843 16.3284 9 15.5 9H1.5C0.671573 9 0 8.32843 0 7.5Z" fill="#BDD9D4"/>
+                    <path d="M0 13.5C0 12.6716 0.671573 12 1.5 12H15.5C16.3284 12 17 12.6716 17 13.5C17 14.3284 16.3284 15 15.5 15H1.5C0.671573 15 0 14.3284 0 13.5Z" fill="#BDD9D4"/>
+                </svg>
+            </button>
+            <!-- Logo -->
+            <button class="flex w-16 shrink-0 cursor-pointer items-center justify-center lg:w-22">
+                <svg xmlns="http://www.w3.org/2000/svg" width="49" height="34" viewBox="0 0 49 34" fill="none">
+                    <path d="M7.3642 5.71441C4.2261 10.1131 7.28948 11.5151 9.21343 11.6663C3.38555 13.3668 -3.45102 21.5294 1.98461 24.5337C7.42024 27.538 19.076 19.4321 18.0674 15.9176C17.8017 14.9922 15.7698 17.5048 12.6317 19.4321C9.91447 21.1009 3.70267 22.3178 6.63572 17.5048C9.1574 13.3668 15.4896 11.8363 16.2181 11.6663C17.2828 11.4177 18.5156 8.64728 16.7785 9.17217C12.4636 10.4759 10.6144 9.39891 11.567 7.01816C12.5196 4.6374 17.563 2.31334 19.4122 2.37002C21.2615 2.42671 19.8605 4.01387 18.7398 5.0342C21.4856 5.54436 23.8952 3.5604 23.4469 1.12296C22.9986 -1.31447 11.2868 0.216008 7.3642 5.71441Z" fill="white"/>
+                    <path d="M23.6711 8.49196C23.503 8.09517 21.99 7.58501 19.6364 9.00212C20.7011 13.3101 17.1707 20.6225 20.8692 20.6225C25.6884 20.6225 29.9473 12.7433 30.956 9.90907C31.8137 7.49899 30.7878 5.71442 27.986 7.18822C27.8739 11.3829 23.9513 16.938 23.2228 17.0513C22.4943 17.1647 24.2715 9.90907 23.6711 8.49196Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M44.2368 7.01816C43.0974 9.85238 41.0651 15.6229 42.0514 16.031C42.7987 16.3403 43.5872 15.9205 44.1798 15.605C44.5647 15.4001 44.8669 15.2392 45.0213 15.3508C45.4136 15.6342 43.3963 18.9786 40.8746 18.6385C38.3529 18.2984 38.1287 16.938 38.2408 16.031C37.4189 17.108 35.1924 19.228 32.8612 19.092C29.9473 18.9219 28.7705 14.954 31.9646 10.4759C35.1588 5.99784 38.8012 5.71441 40.4823 7.24489C40.8746 6.28126 42.0514 6.05452 44.2368 7.01816ZM34.9906 16.031C36.8959 16.031 39.0067 11.0239 39.7538 8.66201C37.2487 8.0989 35.905 10.0531 35.0084 11.357L34.9906 11.3829C34.0941 12.6866 33.0854 16.031 34.9906 16.031Z" fill="white"/>
+                    <path d="M0.527635 34C14.1111 24.9758 38.5397 21.2649 49 20.5091C29.3645 19.0126 10.5957 25.2895 3.66573 28.615C2.32083 29.8053 0.751785 32.4128 0.527635 34Z" fill="#FFD679"/>
+                </svg>
+            </button>
+            <!-- Auth buttons -->
+            <div class="flex w-full justify-end gap-2">
+                <button class="btn-outline m-0.5 flex cursor-pointer items-center justify-center font-bold text-xs h-10 gap-2 rounded-2xl px-4 py-2">Вход</button>
+                <button class="btn-gold m-0.5 flex cursor-pointer items-center justify-center font-bold text-xs h-10 gap-2 rounded-2xl px-4 py-2">Регистрация</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex">
+        <!-- SIDEBAR (Desktop) -->
+        <aside id="sidebar" class="no-scrollbar sticky top-18 hidden h-[calc(100dvh-116px)] flex-col justify-between overflow-y-auto overscroll-contain rounded-2xl bg-green-gradient lg:flex w-50 p-2 mt-10">
+            <div class="flex flex-col">
+                <!-- Date with Eva widget -->
+                <div class="mb-2">
+                    <button class="relative flex h-15 w-full cursor-pointer flex-col items-center justify-center overflow-hidden rounded-2xl border border-gray-600 p-2.5 pb-0 game-card-shadow">
+                        <span class="absolute inset-0 bg-gradient-to-br from-eva-green/30 to-purple-900/30"></span>
+                        <span class="z-10 max-w-26 text-center font-bold text-sm uppercase">Свидание <br> с Евой</span>
+                        <span class="relative flex h-4 items-center justify-center rounded-t-lg bg-gray-900 px-2 text-gray-50 mt-1">
+                            <span class="flex items-center justify-center gap-0.5 font-bold text-xs leading-none">Level 0/21 ❤️</span>
+                        </span>
+                    </button>
+                </div>
+                <!-- Nav items -->
+                <a href="#" class="sidebar-item group flex h-10 w-full cursor-pointer items-center justify-between overflow-hidden rounded-lg p-2 hover:bg-gray-800 mb-1">
+                    <div class="flex items-center">
+                        <span class="text-lg">⭐</span>
+                        <p class="ml-2 select-none text-sm text-gray-50 group-hover:text-gray-100">Уровни</p>
+                    </div>
+                </a>
+                <a href="#" class="sidebar-item group flex h-10 w-full cursor-pointer items-center justify-between overflow-hidden rounded-lg p-2 hover:bg-gray-800 mb-1">
+                    <div class="flex items-center">
+                        <span class="text-lg">💎</span>
+                        <p class="ml-2 select-none text-sm text-gray-50 group-hover:text-gray-100">V.I.P</p>
+                    </div>
+                </a>
+                <a href="#" class="sidebar-item group flex h-10 w-full cursor-pointer items-center justify-between overflow-hidden rounded-lg p-2 hover:bg-gray-800 mb-1">
+                    <div class="flex items-center">
+                        <span class="text-lg">🎁</span>
+                        <p class="ml-2 select-none text-sm text-gray-50 group-hover:text-gray-100">Бонусы</p>
+                    </div>
+                </a>
+                <a href="#" class="sidebar-item group flex h-10 w-full cursor-pointer items-center justify-between overflow-hidden rounded-lg p-2 hover:bg-gray-800 mb-1">
+                    <div class="flex items-center">
+                        <span class="text-lg">📣</span>
+                        <p class="ml-2 select-none text-sm text-gray-50 group-hover:text-gray-100">Промо акции</p>
+                    </div>
+                </a>
+                <!-- Divider -->
+                <div class="relative my-3 flex items-center justify-center">
+                    <div class="absolute inset-0 top-1/2 divider-line h-0.5"></div>
+                </div>
+                <!-- Game categories -->
+                <a href="#" class="sidebar-item group flex h-10 w-full cursor-pointer items-center overflow-hidden rounded-lg p-2 hover:bg-gray-800">
+                    <img src="https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1773229486964_New.png" alt="New" class="w-6 h-6 object-contain">
+                    <p class="ml-2 select-none text-sm text-gray-50 group-hover:text-gray-100">Новые</p>
+                </a>
+                <a href="#" class="sidebar-item group flex h-10 w-full cursor-pointer items-center overflow-hidden rounded-lg p-2 hover:bg-gray-800">
+                    <img src="https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1773229507379_Top.png" alt="Top" class="w-6 h-6 object-contain">
+                    <p class="ml-2 select-none text-sm text-gray-50 group-hover:text-gray-100">Топ</p>
+                </a>
+                <a href="#" class="sidebar-item group flex h-10 w-full cursor-pointer items-center overflow-hidden rounded-lg p-2 hover:bg-gray-800">
+                    <img src="https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1773229513847_Slot.png" alt="Slots" class="w-6 h-6 object-contain">
+                    <p class="ml-2 select-none text-sm text-gray-50 group-hover:text-gray-100">Слоты</p>
+                </a>
+                <a href="#" class="sidebar-item group flex h-10 w-full cursor-pointer items-center overflow-hidden rounded-lg p-2 hover:bg-gray-800">
+                    <img src="https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1773229520190_Live.png" alt="Live" class="w-6 h-6 object-contain">
+                    <p class="ml-2 select-none text-sm text-gray-50 group-hover:text-gray-100">Лайв</p>
+                </a>
+                <a href="#" class="sidebar-item group flex h-10 w-full cursor-pointer items-center overflow-hidden rounded-lg p-2 hover:bg-gray-800">
+                    <img src="https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1773229526210_Bonus.png" alt="Bonus" class="w-6 h-6 object-contain">
+                    <p class="ml-2 select-none text-sm text-gray-50 group-hover:text-gray-100">Отыгрыш бонуса</p>
+                </a>
+                <a href="#" class="sidebar-item group flex h-10 w-full cursor-pointer items-center overflow-hidden rounded-lg p-2 hover:bg-gray-800">
+                    <img src="https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1773229534840_Crash.png" alt="Crash" class="w-6 h-6 object-contain">
+                    <p class="ml-2 select-none text-sm text-gray-50 group-hover:text-gray-100">Краш</p>
+                </a>
+                <a href="#" class="sidebar-item group flex h-10 w-full cursor-pointer items-center overflow-hidden rounded-lg p-2 hover:bg-gray-800">
+                    <img src="https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1775225332368_Easter%20%283%29.png" alt="Easter" class="w-6 h-6 object-contain">
+                    <p class="ml-2 select-none text-sm text-gray-50 group-hover:text-gray-100">Easter</p>
+                </a>
+                <!-- Divider -->
+                <div class="relative my-3 flex items-center justify-center">
+                    <div class="absolute inset-0 top-1/2 divider-line h-0.5"></div>
+                </div>
+                <!-- Social links -->
+                <a href="#" class="sidebar-item group flex h-10 w-full cursor-pointer items-center overflow-hidden rounded-lg p-2 hover:bg-gray-800 mb-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="fill-eva-green"><path d="M9.95099 0C15.4908 0 20.0015 4.51001 20.0018 10.0498V16.0898C20.0018 18.1898 18.2912 19.9004 16.1912 19.9004H16.0613C13.9615 19.9003 12.2518 18.1898 12.2518 16.0898V14.21C12.2519 12.1101 13.9615 10.4005 16.0613 10.4004H16.1912C17.0591 10.4004 17.8603 10.6927 18.5018 11.1836V10.0498C18.5015 5.34001 14.6708 1.5 9.95099 1.5C7.64116 1.50011 5.50085 2.38987 3.91095 4.00977C2.31103 5.63968 1.46186 7.81002 1.50177 10.1299V11.1826C2.14306 10.6921 2.94391 10.4004 3.81134 10.4004H3.94122C6.04116 10.4004 7.75167 12.11 7.75177 14.21V16.0898C7.75177 18.1898 6.04122 19.9004 3.94122 19.9004H3.81134C1.71146 19.9003 0.00177163 18.1898 0.00177163 16.0898V10.1504C-0.0482284 7.44039 0.961615 4.87996 2.84162 2.95996C4.72149 1.05022 7.24127 0.000107805 9.95099 0Z" fill="#017D63"/></svg>
+                    <p class="ml-2 select-none text-sm text-gray-50 group-hover:text-gray-100">Помощь</p>
+                </a>
+                <a href="#" class="sidebar-item group flex h-10 w-full cursor-pointer items-center overflow-hidden rounded-lg p-2 hover:bg-gray-800 mb-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" viewBox="0 0 16 13" fill="none" class="fill-eva-green"><path d="M15.1874 0.00013002C15.3102 -0.00227748 15.5815 0.0278161 15.7583 0.168655C15.8758 0.268682 15.9507 0.408291 15.9682 0.559873C15.9879 0.671822 16.0124 0.92822 15.9928 1.12804C15.7718 3.41276 14.8117 8.95482 14.323 11.5128C14.1168 12.5962 13.7104 12.9585 13.3163 12.9934C12.4618 13.0716 11.8123 12.4397 10.9836 11.9076C9.68709 11.0734 8.95413 10.5546 7.69569 9.74086C6.24081 8.80194 7.18372 8.28433 8.01245 7.4417C8.22976 7.22021 11.9989 3.85814 12.0726 3.5536C12.0812 3.51508 12.0898 3.37303 12.0038 3.2984C11.9179 3.22377 11.7902 3.24905 11.6981 3.26951C11.568 3.2984 9.49679 4.64178 5.48452 7.29605C4.89521 7.69329 4.36359 7.88589 3.886 7.87385C3.36053 7.86422 2.34887 7.58375 1.59626 7.3442C0.672997 7.04928 -0.0599663 6.894 0.00387638 6.39444C0.0370255 6.13443 0.402893 5.8684 1.10025 5.59636C5.3949 3.76184 8.258 2.55208 9.692 1.96826C13.7828 0.299863 14.6337 0.00976001 15.1874 0.00013002Z" fill="#017D63"/></svg>
+                    <p class="ml-2 select-none text-sm text-gray-50 group-hover:text-gray-100">Телеграм</p>
+                </a>
+                <a href="#" class="sidebar-item group flex h-10 w-full cursor-pointer items-center overflow-hidden rounded-lg p-2 hover:bg-gray-800 mb-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="fill-eva-green"><path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM6.65 12.77C6.54 13.07 6.25 13.26 5.95 13.26C5.86 13.26 5.78 13.25 5.69 13.21C4.88 12.91 4.2 12.32 3.77 11.55C2.77 9.75 3.39 7.4 5.14 6.31L7.48 4.86C8.34 4.33 9.35 4.17 10.31 4.42C11.27 4.67 12.08 5.3 12.57 6.18C13.57 7.98 12.95 10.33 11.2 11.42L10.94 11.61C10.6 11.85 10.13 11.77 9.89 11.44C9.65 11.1 9.73 10.63 10.06 10.39L10.37 10.17C11.49 9.47 11.87 8.02 11.26 6.91C10.97 6.39 10.5 6.02 9.94 5.87C9.38 5.72 8.79 5.81 8.28 6.13L5.92 7.59C4.84 8.26 4.46 9.71 5.07 10.83C5.32 11.28 5.72 11.63 6.2 11.81C6.59 11.95 6.79 12.38 6.65 12.77ZM14.92 13.65L12.58 15.1C11.99 15.47 11.33 15.65 10.66 15.65C10.36 15.65 10.05 15.61 9.75 15.53C8.79 15.28 7.98 14.65 7.5 13.77C6.5 11.97 7.12 9.62 8.87 8.53L9.13 8.34C9.47 8.1 9.94 8.18 10.18 8.51C10.42 8.85 10.34 9.32 10.01 9.56L9.7 9.78C8.58 10.48 8.2 11.93 8.81 13.04C9.1 13.56 9.57 13.93 10.13 14.08C10.69 14.23 11.28 14.14 11.79 13.82L14.13 12.37C15.21 11.7 15.59 10.25 14.98 9.13C14.73 8.68 14.33 8.33 13.85 8.15C13.46 8.01 13.26 7.58 13.41 7.19C13.55 6.8 13.99 6.6 14.37 6.75C15.18 7.05 15.86 7.64 16.29 8.41C17.28 10.21 16.67 12.56 14.92 13.65Z" fill="#017D63"/></svg>
+                    <p class="ml-2 select-none text-sm text-gray-50 group-hover:text-gray-100">Партнерка</p>
+                </a>
+            </div>
+            <!-- APK button -->
+            <a href="#" class="mb-2 font-bold text-xs flex h-12 w-full items-center justify-start gap-2 rounded-lg bg-black px-2 py-3 text-white hover:text-gray-50">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M14.2366 22.5427C14.9531 22.5427 15.5779 21.9179 15.5779 21.2014V18.069H16.4735C17.011 18.069 17.3691 17.7106 17.3691 17.1734V8.22649H6.63043V17.1734C6.63043 17.7108 6.98867 18.069 7.52604 18.069H8.42171V21.2015C8.42171 21.918 9.04638 22.5428 9.763 22.5428C10.4794 22.5428 11.1041 21.918 11.1041 21.2015V18.069H12.8954V21.2015C12.8954 21.9179 13.5202 22.5427 14.2366 22.5427Z" fill="currentColor"/><path d="M19.2632 17.1734C19.9797 17.1734 20.6044 16.5487 20.6044 15.8321V9.56721C20.6044 8.85452 19.9797 8.22649 19.2632 8.22649C18.5467 8.22649 17.922 8.85452 17.922 9.56721V15.8321C17.922 16.5486 18.5466 17.1734 19.2632 17.1734Z" fill="currentColor"/><path d="M4.73641 17.1734C5.45297 17.1734 6.07771 16.5487 6.07771 15.8321V9.56721C6.07771 8.85452 5.45304 8.22649 4.73641 8.22649C4.01993 8.22649 3.39526 8.85452 3.39526 9.56721V15.8321C3.39526 16.5486 4.01993 17.1734 4.73641 17.1734Z" fill="currentColor"/><path d="M16.2943 1.59218C16.1153 1.41198 15.8487 1.41198 15.6697 1.59218L14.4685 2.78939L14.413 2.84473C13.7008 2.48806 12.9022 2.30994 12.0129 2.30823C12.0085 2.30823 12.0043 2.30808 11.9999 2.30808C11.9954 2.30808 11.9911 2.30823 11.9866 2.30823C11.0974 2.30994 10.2988 2.48806 9.5866 2.84473L8.3299 1.59218C8.1507 1.41198 7.88427 1.41198 7.70523 1.59218C7.52603 1.77137 7.52603 2.0373 7.70523 2.21634L8.86718 3.37852C8.49278 3.6285 8.15328 3.9344 7.85803 4.28427C7.15121 5.1221 6.70037 6.21248 6.63837 7.39388C6.6378 7.40618 6.63658 7.41834 6.63601 7.43064C6.63222 7.51108 6.63043 7.59195 6.63043 7.67311H17.3691C17.3691 7.59195 17.3672 7.51108 17.3636 7.43064C17.363 7.41834 17.3618 7.40618 17.3611 7.39388C17.2992 6.21248 16.8482 5.12202 16.1414 4.28434C15.8463 3.93447 15.5066 3.62857 15.1322 3.37859L16.2943 2.21642C16.4735 2.03729 16.4735 1.77137 16.2943 1.59218ZM9.76128 6.10937C9.39074 6.10937 9.09035 5.80897 9.09035 5.43843C9.09035 5.06789 9.39074 4.7675 9.76128 4.7675C10.1318 4.7675 10.4322 5.06789 10.4322 5.43843C10.4322 5.80897 10.1318 6.10937 9.76128 6.10937ZM14.2383 6.10937C13.8677 6.10937 13.5674 5.80897 13.5674 5.43843C13.5674 5.06789 13.8677 4.7675 14.2383 4.7675C14.6088 4.7675 14.9092 5.06789 14.9092 5.43843C14.9092 5.80897 14.6088 6.10937 14.2383 6.10937Z" fill="currentColor"/></svg>
+                <div class="flex flex-col text-xs">
+                    <span>Установи для</span>
+                    <span class="font-bold">Android</span>
+                </div>
+            </a>
+        </aside>
+
+        <!-- MOBILE SIDEBAR OVERLAY -->
+        <div id="mobileSidebar" class="fixed inset-0 bg-black/70 transition-opacity duration-300 lg:hidden invisible opacity-0" style="z-index:100">
+            <aside class="no-scrollbar fixed top-0 bottom-0 w-78 transform overflow-y-auto overscroll-contain rounded-2xl bg-green-gradient p-2 flex flex-col justify-between transition-all duration-300 -right-full" style="z-index:101" id="mobileSidebarPanel">
+                <div class="flex flex-col">
+                    <button id="closeSidebar" class="flex w-full cursor-pointer items-center justify-end mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.49 2 2 6.49 2 12C2 17.51 6.49 22 12 22C17.51 22 22 17.51 22 12C22 6.49 17.51 2 12 2ZM15.36 14.3C15.65 14.59 15.65 15.07 15.36 15.36C15.21 15.51 15.02 15.58 14.83 15.58C14.64 15.58 14.45 15.51 14.3 15.36L12 13.06L9.7 15.36C9.55 15.51 9.36 15.58 9.17 15.58C8.98 15.58 8.79 15.51 8.64 15.36C8.35 15.07 8.35 14.59 8.64 14.3L10.94 12L8.64 9.7C8.35 9.41 8.35 8.93 8.64 8.64C8.93 8.35 9.41 8.35 9.7 8.64L12 10.94L14.3 8.64C14.59 8.35 15.07 8.35 15.36 8.64C15.65 8.93 15.65 9.41 15.36 9.7L13.06 12L15.36 14.3Z" fill="#BDD9D4"/></svg>
+                    </button>
+                    <a href="#" class="group flex h-10 w-full items-center rounded-lg p-2 hover:bg-gray-800 mb-1"><span class="text-lg">⭐</span><p class="ml-2 text-sm text-gray-50">Уровни</p></a>
+                    <a href="#" class="group flex h-10 w-full items-center rounded-lg p-2 hover:bg-gray-800 mb-1"><span class="text-lg">💎</span><p class="ml-2 text-sm text-gray-50">V.I.P</p></a>
+                    <a href="#" class="group flex h-10 w-full items-center rounded-lg p-2 hover:bg-gray-800 mb-1"><span class="text-lg">🎁</span><p class="ml-2 text-sm text-gray-50">Бонусы</p></a>
+                    <a href="#" class="group flex h-10 w-full items-center rounded-lg p-2 hover:bg-gray-800 mb-1"><span class="text-lg">📣</span><p class="ml-2 text-sm text-gray-50">Промо акции</p></a>
+                    <div class="relative my-3 flex items-center justify-center"><div class="absolute inset-0 top-1/2 divider-line h-0.5"></div></div>
+                    <a href="#" class="group flex h-10 w-full items-center rounded-lg p-2 hover:bg-gray-800"><img src="https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1773229486964_New.png" alt="" class="w-6 h-6 object-contain"><p class="ml-2 text-sm text-gray-50">Новые</p></a>
+                    <a href="#" class="group flex h-10 w-full items-center rounded-lg p-2 hover:bg-gray-800"><img src="https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1773229507379_Top.png" alt="" class="w-6 h-6 object-contain"><p class="ml-2 text-sm text-gray-50">Топ</p></a>
+                    <a href="#" class="group flex h-10 w-full items-center rounded-lg p-2 hover:bg-gray-800"><img src="https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1773229513847_Slot.png" alt="" class="w-6 h-6 object-contain"><p class="ml-2 text-sm text-gray-50">Слоты</p></a>
+                    <a href="#" class="group flex h-10 w-full items-center rounded-lg p-2 hover:bg-gray-800"><img src="https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1773229520190_Live.png" alt="" class="w-6 h-6 object-contain"><p class="ml-2 text-sm text-gray-50">Лайв</p></a>
+                    <a href="#" class="group flex h-10 w-full items-center rounded-lg p-2 hover:bg-gray-800"><img src="https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1773229534840_Crash.png" alt="" class="w-6 h-6 object-contain"><p class="ml-2 text-sm text-gray-50">Краш</p></a>
+                </div>
+            </aside>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="no-scrollbar mx-auto flex w-full max-w-387 flex-1 flex-col overflow-y-auto px-2 md:px-4">
+
+            <!-- HERO SECTION -->
+            <div class="flex w-full flex-col items-center">
+                <div class="relative mb-4 flex h-72 md:h-105 w-full flex-col items-center justify-between overflow-hidden rounded-2xl">
+                    <div class="absolute inset-0 bg-gradient-to-b from-eva-green/20 via-purple-900/30 to-gray-1000"></div>
+                    <div class="absolute inset-0 bg-[url('https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/banners/1772099132640_Welcome%20pack.png')] bg-center bg-cover opacity-40"></div>
+                    <!-- EVA Character -->
+                    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-80 h-80 md:w-[26rem] md:h-[26rem] flex flex-col items-center">
+                        <div class="relative w-full h-full">
+                            <img src="https://12-3vajoy.com/assets/home/header-eva.webp" alt="EVA" class="w-full h-full object-contain drop-shadow-[0_0_30px_rgba(1,125,99,0.4)]">
+                        </div>
+                        <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-full h-24 bg-gradient-to-t from-gray-1000 to-transparent"></div>
+                    </div>
+                    
+                </div>
+
+                <!-- FEATURE CARDS -->
+                <div class="-mt-12 mb-6 flex gap-3 overflow-x-auto px-2 pt-[60px] md:w-full md:justify-center md:px-0 no-scrollbar slider-container">
+                    <div class="shrink-0 w-[calc(50%-6px)] flex flex-col items-center md:min-w-[160px] md:max-w-[220px] md:w-auto">
+                        <img src="https://12-3vajoy.com/assets/features/box.webp" alt="Подарки" class="w-32 h-32 object-contain -mb-[68px] relative z-10 drop-shadow-lg">
+                        <div class="flex h-28 w-full flex-col items-center justify-end rounded-2xl border border-gray-600 feature-card p-3 pb-4">
+                            <p class="text-center font-bold text-xs text-gray-50">Подарки от Евы</p>
+                        </div>
+                    </div>
+                    <div class="shrink-0 w-[calc(50%-6px)] flex flex-col items-center md:min-w-[160px] md:max-w-[220px] md:w-auto">
+                        <img src="https://12-3vajoy.com/assets/features/wheel.webp" alt="Колесо" class="w-32 h-32 object-contain -mb-[68px] relative z-10 drop-shadow-lg">
+                        <div class="flex h-28 w-full flex-col items-center justify-end rounded-2xl border border-gray-600 feature-card p-3 pb-4">
+                            <p class="text-center font-bold text-xs text-gray-50">Колесо фортуны</p>
+                        </div>
+                    </div>
+                    <div class="shrink-0 w-[calc(50%-6px)] flex flex-col items-center md:min-w-[160px] md:max-w-[220px] md:w-auto">
+                        <img src="https://12-3vajoy.com/assets/features/dollars.webp" alt="Кешбек" class="w-32 h-32 object-contain -mb-[68px] relative z-10 drop-shadow-lg">
+                        <div class="flex h-28 w-full flex-col items-center justify-end rounded-2xl border border-gray-600 feature-card p-3 pb-4">
+                            <p class="text-center font-bold text-xs text-gray-50">Кешбек до 20%</p>
+                        </div>
+                    </div>
+                    <div class="shrink-0 w-[calc(50%-6px)] flex flex-col items-center md:min-w-[160px] md:max-w-[220px] md:w-auto">
+                        <img src="https://12-3vajoy.com/assets/features/prize.webp" alt="Турниры" class="w-32 h-32 object-contain -mb-[68px] relative z-10 drop-shadow-lg">
+                        <div class="flex h-28 w-full flex-col items-center justify-end rounded-2xl border border-gray-600 feature-card p-3 pb-4">
+                            <p class="text-center font-bold text-xs text-gray-50">Крупные турниры</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <main class="mb-8 w-full lg:mb-4">
+
+                <!-- CATEGORY TABS -->
+                <div class="no-scrollbar flex w-full gap-2 overflow-x-auto mb-6 lg:mb-8 pb-2" id="categoryTabs">
+                    <button class="category-tab active flex items-center gap-2 shrink-0 rounded-2xl border border-gray-600 bg-gray-800 px-4 py-2 text-sm text-gray-50 hover:border-yellow-300 transition-all" data-category="new">
+                        <img src="https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1773229486964_New.png" alt="" class="w-5 h-5 object-contain">
+                        Новые
+                    </button>
+                    <button class="category-tab flex items-center gap-2 shrink-0 rounded-2xl border border-gray-600 bg-gray-800 px-4 py-2 text-sm text-gray-50 hover:border-yellow-300 transition-all" data-category="top">
+                        <img src="https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1773229507379_Top.png" alt="" class="w-5 h-5 object-contain">
+                        Топ
+                    </button>
+                    <button class="category-tab flex items-center gap-2 shrink-0 rounded-2xl border border-gray-600 bg-gray-800 px-4 py-2 text-sm text-gray-50 hover:border-yellow-300 transition-all" data-category="slots">
+                        <img src="https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1773229513847_Slot.png" alt="" class="w-5 h-5 object-contain">
+                        Слоты
+                    </button>
+                    <button class="category-tab flex items-center gap-2 shrink-0 rounded-2xl border border-gray-600 bg-gray-800 px-4 py-2 text-sm text-gray-50 hover:border-yellow-300 transition-all" data-category="live">
+                        <img src="https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1773229520190_Live.png" alt="" class="w-5 h-5 object-contain">
+                        Лайв
+                    </button>
+                    <button class="category-tab flex items-center gap-2 shrink-0 rounded-2xl border border-gray-600 bg-gray-800 px-4 py-2 text-sm text-gray-50 hover:border-yellow-300 transition-all" data-category="crash">
+                        <img src="https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1773229534840_Crash.png" alt="" class="w-5 h-5 object-contain">
+                        Краш
+                    </button>
+                    <button class="category-tab flex items-center gap-2 shrink-0 rounded-2xl border border-gray-600 bg-gray-800 px-4 py-2 text-sm text-gray-50 hover:border-yellow-300 transition-all" data-category="bonus">
+                        <img src="https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1773229526210_Bonus.png" alt="" class="w-5 h-5 object-contain">
+                        Отыгрыш
+                    </button>
+                </div>
+
+                <!-- NEW GAMES SECTION -->
+                <section class="mb-8" id="newGamesSection">
+                    <div class="flex w-full items-center justify-between gap-2 mb-2">
+                        <div class="flex items-center gap-2">
+                            <img src="https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1773229486964_New.png" alt="" class="w-6 h-6 object-contain">
+                            <h3 class="text-gray-50 text-lg font-bold">Новые</h3>
+                        </div>
+                        <button class="flex items-center gap-2 rounded-2xl border border-gray-600 bg-gray-800 text-gray-50 text-sm px-4 py-2 hover:border-gray-400 transition-all">
+                            <span class="hidden sm:inline">Смотреть все</span>
+                            <span class="sm:hidden">Все</span>
+                            <span class="flex items-center justify-center rounded-lg border-2 border-gray-600 bg-gray-600 px-1">
+                                <span class="font-bold text-xs text-gray-50">145</span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="relative my-3 flex items-center justify-center">
+                        <div class="absolute inset-0 top-1/2 divider-line h-0.5"></div>
+                    </div>
+                    <div class="game-grid" id="newGamesGrid">
+                        <!-- Games will be inserted by JS -->
+                    </div>
+                </section>
+
+                <!-- TOP GAMES SECTION -->
+                <section class="mb-8">
+                    <div class="flex w-full items-center justify-between gap-2 mb-2">
+                        <div class="flex items-center gap-2">
+                            <img src="https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1773229507379_Top.png" alt="" class="w-6 h-6 object-contain">
+                            <h3 class="text-gray-50 text-lg font-bold">Топ</h3>
+                        </div>
+                        <button class="flex items-center gap-2 rounded-2xl border border-gray-600 bg-gray-800 text-gray-50 text-sm px-4 py-2 hover:border-gray-400 transition-all">
+                            <span class="hidden sm:inline">Смотреть все</span>
+                            <span class="sm:hidden">Все</span>
+                            <span class="flex items-center justify-center rounded-lg border-2 border-gray-600 bg-gray-600 px-1">
+                                <span class="font-bold text-xs text-gray-50">80</span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="relative my-3 flex items-center justify-center">
+                        <div class="absolute inset-0 top-1/2 divider-line h-0.5"></div>
+                    </div>
+                    <div class="game-grid" id="topGamesGrid"></div>
+                </section>
+
+                <!-- LIVE GAMES SECTION -->
+                <section class="mb-8">
+                    <div class="flex w-full items-center justify-between gap-2 mb-2">
+                        <div class="flex items-center gap-2">
+                            <img src="https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1773229520190_Live.png" alt="" class="w-6 h-6 object-contain">
+                            <h3 class="text-gray-50 text-lg font-bold">Лайв</h3>
+                        </div>
+                        <button class="flex items-center gap-2 rounded-2xl border border-gray-600 bg-gray-800 text-gray-50 text-sm px-4 py-2 hover:border-gray-400 transition-all">
+                            <span class="hidden sm:inline">Смотреть все</span>
+                            <span class="sm:hidden">Все</span>
+                            <span class="flex items-center justify-center rounded-lg border-2 border-gray-600 bg-gray-600 px-1">
+                                <span class="font-bold text-xs text-gray-50">849</span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="relative my-3 flex items-center justify-center">
+                        <div class="absolute inset-0 top-1/2 divider-line h-0.5"></div>
+                    </div>
+                    <div class="game-grid" id="liveGamesGrid"></div>
+                </section>
+
+                <!-- APK BANNER -->
+                <div class="relative h-56 md:h-72 w-full overflow-hidden rounded-2xl mb-8">
+                    <div class="absolute inset-0 bg-gradient-to-r from-eva-green/60 to-purple-900/60"></div>
+                    <div class="absolute inset-0 bg-[url('https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/banners/1772458346830_Bonus%20shop.png')] bg-center bg-cover opacity-30"></div>
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:left-12 md:translate-x-0 flex w-full flex-col items-center px-4 md:items-start">
+                        <h3 class="font-unbounded font-bold text-xl md:text-3xl text-white mb-1">Скачай приложение</h3>
+                        <span class="text-sm md:text-lg text-gray-200">Будь на связи с Евой где угодно</span>
+                        <a href="#" class="btn-gold mt-4 md:mt-8 px-6 py-3 text-sm w-full max-w-[280px] md:max-w-[260px] text-center">Скачать</a>
+                    </div>
+                </div>
+
+                <!-- LIVE WINS SECTION -->
+                <div class="mb-8">
+                    <div class="relative my-4 flex items-center justify-center">
+                        <div class="h-0.5 grow bg-gradient-to-r from-transparent via-yellow-300 to-yellow-300"></div>
+                        <div class="z-10 bg-transparent px-3 text-center">
+                            <div class="flex items-center justify-center gap-2">
+                                <span class="text-lg">💎</span>
+                                <p class="font-bold text-sm text-white">Лайв выигрыши</p>
+                                <span class="text-lg">💎</span>
+                            </div>
+                        </div>
+                        <div class="h-0.5 grow bg-gradient-to-r from-yellow-300 via-yellow-300 to-transparent"></div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 justify-center" id="liveWinsContainer">
+                        <!-- Generated by JS -->
+                    </div>
+                </div>
+
+                <!-- SEO TEXT SECTION -->
+                <section class="relative mb-8 pb-6">
+                    <div id="seoOverlay" class="absolute right-0 bottom-0 left-0 z-10 flex items-end justify-center transition-all duration-300 h-26" style="background:linear-gradient(360deg, var(--tw-gray-1000, #0B0B0B) 25%, transparent 85%)">
+                        <button id="seoToggle" class="flex items-center gap-1 rounded-lg border border-gray-600 bg-gray-800 text-gray-50 text-xs px-2 py-1 hover:border-green-300 transition-all">
+                            Развернуть
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="transition-all duration-300 [&_path]:fill-gray-50" id="seoArrow"><path d="M17.92 8.17969H11.69H6.07999C5.11999 8.17969 4.63999 9.33969 5.31999 10.0197L10.5 15.1997C11.33 16.0297 12.68 16.0297 13.51 15.1997L15.48 13.2297L18.69 10.0197C19.36 9.33969 18.88 8.17969 17.92 8.17969Z" fill="#BDD9D4"/></svg>
+                        </button>
+                    </div>
+                    <div id="seoContent" class="flex flex-col gap-4 text-gray-100 text-sm seo-collapsed transition-all duration-300">
+                        <h1 class="font-unbounded font-bold text-lg text-white">Eva Casino официальный сайт — играйте онлайн в Ева Казино</h1>
+                        <p>Eva Casino — это современная гемблинг-платформа, где каждый игрок может насладиться качественными азартными развлечениями. На Eva Casino официальный сайт представлены сотни слотов, настольные игры с живыми дилерами и популярные краш-игры. Ева Казино онлайн работает по официальной лицензии и гарантирует честность каждого раунда, безопасность транзакций и конфиденциальность персональных данных пользователей.</p>
+
+                        <h2 class="font-unbounded font-bold text-lg text-white">Eva Casino зеркало — бесперебойный доступ к любимым играм</h2>
+                        <p>В некоторых регионах доступ к азартным площадкам может быть ограничен провайдерами. Для решения этой проблемы существует Eva Casino зеркало — точная копия официального сайта, расположенная по другому доменному адресу. Ева казино зеркало позволяет обойти блокировки и получить полный доступ к игровому счёту, бонусам и депозитам. Рабочая ссылка всегда доступна в службе поддержки или через Telegram-канал казино.</p>
+                        <p>Ева казино зеркало рабочее обновляется регулярно, поэтому игроки никогда не теряют доступ к платформе. Важно использовать только проверенные ссылки, чтобы не попасть на мошеннические ресурсы. Оригинальное зеркало Eva Casino полностью идентично основному сайту по функционалу и дизайну — все данные аккаунта, баланс и история транзакций полностью синхронизированы между основным сайтом и зеркалом.</p>
+
+                        <h2 class="font-unbounded font-bold text-lg text-white">Ева Казино играть — каталог азартных развлечений</h2>
+                        <p>Если вы решили в Ева Казино играть, вас ждёт разнообразный каталог азартных развлечений от ведущих провайдеров игрового софта: Pragmatic Play, BGaming, Evolution Gaming, Endorphina, Belatra, Fugaso, Amigo Gaming и многих других. На Eva Casino играть можно в следующие категории игр:</p>
+                        <ul class="list-disc pl-6 marker:text-white">
+                            <li><strong>Слоты</strong> — от классических фруктовых автоматов до современных видео-слотов с множеством линий выплат, бонусными раундами и функцией покупки фриспинов. Популярные тайтлы включают Sweet Bonanza, Gates of Olympus, Starlight Princess и другие.</li>
+                            <li><strong>Лайв-игры</strong> — блэкджек, рулетка, баккара и другие настольные игры с настоящими дилерами в реальном времени. Раздел лайв-казино представлен студиями Evolution и Pragmatic Play Live.</li>
+                            <li><strong>Краш-игры</strong> — формат, где игрок делает ставку и должен забрать выигрыш до того, как множитель разобьётся. Это динамичный и увлекательный формат, ставший одним из самых популярных в онлайн-гемблинге.</li>
+                            <li><strong>Настольные игры</strong> — покер, сик-бо, кости и другие классические азартные развлечения в электронном формате.</li>
+                        </ul>
+                        <p>Ева Казино регулярно обновляет ассортимент, добавляя новинки от проверенных провайдеров, поэтому скучать точно не придётся. Каталог пополняется еженедельно, и каждый игрок найдёт развлечение по душе.</p>
+
+                        <h2 class="font-unbounded font-bold text-lg text-white">Ева Казино онлайн — слоты, лайв и краш-игры</h2>
+                        <p>Ева Казино онлайн предлагает удобный интерфейс с продуманной навигацией. Все игры разделены по категориям, предусмотрен поиск по названию и фильтрация по провайдеру. Eva Casino официальный сайт адаптирован под мобильные устройства, поэтому играть можно с любого смартфона или планшета без потери качества графики и функционала. Мобильная версия полностью повторяет десктопную, не требуя скачивания дополнительных приложений.</p>
+                        <p>Впрочем, для пользователей Android доступен APK-файл, который обеспечивает ещё более быстрый доступ к платформе и оптимизирует работу на мобильных устройствах. Приложение потребляет минимум трафика и обеспечивает стабильное соединение даже при слабом интернете.</p>
+
+                        <h2 class="font-unbounded font-bold text-lg text-white">Ева казино официальный — бонусы и акции</h2>
+                        <p>Ева казино официальный сайт предлагает щедрую бонусную программу как для новых, так и для постоянных игроков. При регистрации и первом депозите доступен приветственный бонус, который увеличивает сумму пополнения. Также на платформе действуют следующие акции:</p>
+                        <ul class="list-disc pl-6 marker:text-white">
+                            <li><strong>Подарки от Евы</strong> — персональные бонусы, которые игрок получает за активность на платформе и регулярные депозиты.</li>
+                            <li><strong>Колесо фортуны</strong> — вращайте колесо и выигрывайте фриспины, бонусные средства и другие ценные призы.</li>
+                            <li><strong>Кешбек до 20%</strong> — возврат части проигранных средств каждую неделю. Процент кешбека зависит от статуса игрока в программе лояльности.</li>
+                            <li><strong>Турниры</strong> — регулярные соревнования с крупными призовыми фондами. Участвуйте, выполняйте задания и получайте награды.</li>
+                        </ul>
+                        <p>Ева Казино также проводит сезонные акции и временные промо-кампании, информация о которых публикуется на сайте и в Telegram-канале. Подписывайтесь, чтобы не пропустить выгодные предложения и эксклюзивные бонусы.</p>
+
+                        <h2 class="font-unbounded font-bold text-lg text-white">Ева казино зеркало рабочее — как обойти блокировки</h2>
+                        <p>Если основной домен Ева Казино недоступен, Ева казино зеркало рабочее станет решением проблемы. Зеркало — это полная копия сайта с идентичным дизайном, функционалом и базой данных. Все данные аккаунта, баланс и история транзакций полностью синхронизированы между основным сайтом и зеркалом. Чтобы найти Ева казино зеркало рабочее, достаточно обратиться в службу поддержки или подписаться на Telegram-канал, где публикуются актуальные ссылки.</p>
+                        <p>Важно помнить: Eva Casino зеркало бесплатно предоставляется всем пользователям и не требует повторной регистрации. Если вы уже зарегистрированы на основном сайте, используйте те же учётные данные для входа через зеркало. Никакие дополнительные действия не требуются — достаточно перейти по ссылке и авторизоваться.</p>
+
+                        <h2 class="font-unbounded font-bold text-lg text-white">Eva Casino играть на мобильных устройствах</h2>
+                        <p>Современные игроки ценят мобильность, и Eva Casino играть позволяет с любого устройства. Платформа полностью адаптивна и корректно отображается на экранах смартфонов, планшетов и компьютеров. Мобильная версия не уступает десктопной по количеству доступных игр, скорости загрузки и удобству навигации.</p>
+                        <p>Для владельцев устройств на Android предусмотрен отдельный APK-файл, который можно скачать прямо с сайта. Установка приложения занимает несколько минут, после чего игрок получает мгновенный доступ к Eva Casino без необходимости открывать браузер. Приложение оптимизировано для работы на мобильных устройствах, потребляет минимум трафика и обеспечивает стабильное соединение даже при слабом интернете.</p>
+
+                        <h2 class="font-unbounded font-bold text-lg text-white">Ева казино официальный сайт — регистрация и верификация</h2>
+                        <p>Чтобы воспользоваться всеми возможностями платформы, необходимо пройти регистрацию. Ева казино официальный сайт предлагает простую и быструю процедуру создания аккаунта. Для регистрации потребуется указать электронную почту, придумать пароль и выбрать валюту счёта. Процесс занимает не более минуты.</p>
+                        <p>После регистрации рекомендуется пройти верификацию — подтвердить личность, загрузив фото документа. Верификация повышает безопасность аккаунта и снимает ограничения на вывод средств. Ева Казино использует современные технологии шифрования для защиты персональных данных, поэтому информация игроков находится в полной безопасности. Eva casino официальный сайт требует верификации только один раз, после чего все операции проходят без дополнительных проверок.</p>
+
+                        <h2 class="font-unbounded font-bold text-lg text-white">Eva casino зеркало — безопасность и лицензия</h2>
+                        <p>Ева Казино работает по лицензии, выданной Правительством Автономного острова Анжуан. Это гарантирует, что платформа проходит регулярные проверки на честность и соответствует международным стандартам онлайн-гемблинга. Все игры используют генератор случайных чисел (RNG), который обеспечивает непредсказуемость результатов каждого раунда.</p>
+                        <p>Eva casino зеркало также работает по той же лицензии и обеспечивает аналогичный уровень безопасности. Платформа использует SSL-шифрование для защиты транзакций и персональных данных. Кроме того, Ева Казино сотрудничает только с сертифицированными провайдерами, чей софт прошёл независимые аудиты в лабораториях iTech Labs, GLI и BMM Testlabs.</p>
+
+                        <h2 class="font-unbounded font-bold text-lg text-white">Ева Казино — платёжные методы</h2>
+                        <p>На Eva Casino официальный сайт доступен широкий выбор платёжных методов для депозитов и вывода средств. Игроки могут использовать банковские карты, электронные кошельки и криптовалюту. Минимальная сумма пополнения составляет всего 500 рублей, что делает платформу доступной для широкой аудитории.</p>
+                        <p>Вывод средств обрабатывается в кратчайшие сроки: для электронных кошельков — от 15 минут, для банковских карт — до 24 часов. Криптовалютные транзакции обрабатываются ещё быстрее. Ева казино онлайн не взимает комиссию за пополнение и вывод, однако комиссия может взиматься со стороны платёжной системы. Лимиты на вывод зависят от статуса игрока в программе лояльности: чем выше статус, тем больше доступная сумма для вывода.</p>
+
+                        <h2 class="font-unbounded font-bold text-lg text-white">Ева казино играть ответственно</h2>
+                        <p>Ева Казино поддерживает принципы ответственной игры и предоставляет инструменты для контроля над азартными привычками. Игроки могут устанавливать лимиты на депозиты, ставки и время проведения в игре. При необходимости доступна функция самоисключения, которая позволяет временно заблокировать аккаунт.</p>
+                        <p>Ева казино официальный также предоставляет информацию об организациях, которые помогают при проблемах с игровой зависимостью. Помните: азартные игры должны приносить удовольствие, а не становиться источником финансовых проблем. Играйте осознанно, не превышайте установленные лимиты и обращайтесь за помощью, если чувствуете, что теряете контроль.</p>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- FOOTER -->
+            <footer class="relative mt-auto flex h-fit flex-col items-start justify-between gap-4 rounded-2xl bg-gradient-to-b from-gray-800 to-gray-1000 p-6 md:flex-row md:items-start lg:p-8">
+                <div class="order-1 mb-4">
+                    <div class="mb-4 flex items-center gap-4 text-gray-50">
+                        <svg width="46" height="45" viewBox="0 0 46 45" fill="none">
+                            <path d="M8.43787 20.036V17.39L14.4859 16.166V29H11.5519V19.262L8.43787 20.036ZM17.7581 19.442C17.7581 18.734 17.9501 18.134 18.3341 17.642C18.7301 17.138 19.2461 16.76 19.8821 16.508C20.5301 16.244 21.2381 16.112 22.0061 16.112C22.7861 16.112 23.4941 16.244 24.1301 16.508C24.7781 16.76 25.2941 17.138 25.6781 17.642C26.0741 18.134 26.2721 18.734 26.2721 19.442C26.2721 20.018 26.1461 20.522 25.8941 20.954C25.6541 21.374 25.3241 21.728 24.9041 22.016C24.4961 22.292 24.0401 22.496 23.5361 22.628C23.0321 22.76 22.5221 22.826 22.0061 22.826C21.4901 22.826 20.9801 22.76 20.4761 22.628C19.9721 22.496 19.5161 22.292 19.1081 22.016C18.7001 21.728 18.3701 21.374 18.1181 20.954C17.8781 20.522 17.7581 20.018 17.7581 19.442Z" fill="currentColor"/>
+                            <path d="M23 1C35.1711 1 45 10.6465 45 22.5C45 34.3535 35.1711 44 23 44C10.8289 44 1 34.3535 1 22.5C1 10.6465 10.8289 1 23 1Z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span class="font-unbounded font-bold text-xl">Eva Casino</span>
+                    </div>
+                    <p class="w-full max-w-md text-left text-gray-100 text-xs leading-relaxed">Eva-casino.com принадлежит и управляется компанией 3-102-937610 SRL. Юридический адрес: Коста-Рика, провинция Сан-Хосе. Eva-casino.com лицензируется и регулируется Правительством Автономного острова Анжуан на основании лицензии № ALSI-202510054-FI2.</p>
+                </div>
+                <div class="order-2 flex-col gap-2">
+                    <p class="mb-2 font-bold text-base text-gray-50">Информация</p>
+                    <div class="flex flex-col">
+                        <a href="#" class="font-bold text-xs text-gray-100 hover:text-gray-50 mb-1">Политика конфиденциальности</a>
+                        <a href="#" class="font-bold text-xs text-gray-100 hover:text-gray-50 mb-1">Условия использования</a>
+                        <a href="#" class="font-bold text-xs text-gray-100 hover:text-gray-50 mb-1">Политика KYC</a>
+                        <a href="#" class="font-bold text-xs text-gray-100 hover:text-gray-50 mb-1">Политика AML</a>
+                        <a href="#" class="font-bold text-xs text-gray-100 hover:text-gray-50 mb-1">Условия бонуса</a>
+                        <a href="#" class="font-bold text-xs text-gray-100 hover:text-gray-50 mb-1">Ответственная игра</a>
+                    </div>
+                </div>
+                <div class="order-3 flex-col gap-2">
+                    <p class="mb-2 font-bold text-base text-gray-50">Помощь</p>
+                    <div class="flex flex-col gap-2">
+                        <a href="#" class="font-bold text-xs text-blue-300 hover:text-blue-200">Чат поддержки</a>
+                        <a href="#" class="font-bold text-xs text-blue-300 hover:text-blue-200">support@eva-casino.com</a>
+                        <a href="#" class="font-bold text-xs text-blue-300 hover:text-blue-200">Партнёрка</a>
+                    </div>
+                </div>
+                <div class="order-0 w-full md:order-last md:max-w-46">
+                    <a href="#" class="mb-4 font-bold text-xs flex h-12 w-full items-center justify-start gap-2 rounded-lg bg-black px-2 py-3 text-white hover:text-gray-50">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M14.2366 22.5427C14.9531 22.5427 15.5779 21.9179 15.5779 21.2014V18.069H16.4735C17.011 18.069 17.3691 17.7106 17.3691 17.1734V8.22649H6.63043V17.1734C6.63043 17.7108 6.98867 18.069 7.52604 18.069H8.42171V21.2015C8.42171 21.918 9.04638 22.5428 9.763 22.5428C10.4794 22.5428 11.1041 21.918 11.1041 21.2015V18.069H12.8954V21.2015C12.8954 21.9179 13.5202 22.5427 14.2366 22.5427Z" fill="currentColor"/><path d="M19.2632 17.1734C19.9797 17.1734 20.6044 16.5487 20.6044 15.8321V9.56721C20.6044 8.85452 19.9797 8.22649 19.2632 8.22649C18.5467 8.22649 17.922 8.85452 17.922 9.56721V15.8321C17.922 16.5486 18.5466 17.1734 19.2632 17.1734Z" fill="currentColor"/><path d="M4.73641 17.1734C5.45297 17.1734 6.07771 16.5487 6.07771 15.8321V9.56721C6.07771 8.85452 5.45304 8.22649 4.73641 8.22649C4.01993 8.22649 3.39526 8.85452 3.39526 9.56721V15.8321C3.39526 16.5486 4.01993 17.1734 4.73641 17.1734Z" fill="currentColor"/><path d="M16.2943 1.59218C16.1153 1.41198 15.8487 1.41198 15.6697 1.59218L14.4685 2.78939L14.413 2.84473C13.7008 2.48806 12.9022 2.30994 12.0129 2.30823C12.0085 2.30823 12.0043 2.30808 11.9999 2.30808C11.9954 2.30808 11.9911 2.30823 11.9866 2.30823C11.0974 2.30994 10.2988 2.48806 9.5866 2.84473L8.3299 1.59218C8.1507 1.41198 7.88427 1.41198 7.70523 1.59218C7.52603 1.77137 7.52603 2.0373 7.70523 2.21634L8.86718 3.37852C8.49278 3.6285 8.15328 3.9344 7.85803 4.28427C7.15121 5.1221 6.70037 6.21248 6.63837 7.39388C6.6378 7.40618 6.63658 7.41834 6.63601 7.43064C6.63222 7.51108 6.63043 7.59195 6.63043 7.67311H17.3691C17.3691 7.59195 17.3672 7.51108 17.3636 7.43064C17.363 7.41834 17.3618 7.40618 17.3611 7.39388C17.2992 6.21248 16.8482 5.12202 16.1414 4.28434C15.8463 3.93447 15.5066 3.62857 15.1322 3.37859L16.2943 2.21642C16.4735 2.03729 16.4735 1.77137 16.2943 1.59218ZM9.76128 6.10937C9.39074 6.10937 9.09035 5.80897 9.09035 5.43843C9.09035 5.06789 9.39074 4.7675 9.76128 4.7675C10.1318 4.7675 10.4322 5.06789 10.4322 5.43843C10.4322 5.80897 10.1318 6.10937 9.76128 6.10937ZM14.2383 6.10937C13.8677 6.10937 13.5674 5.80897 13.5674 5.43843C13.5674 5.06789 13.8677 4.7675 14.2383 4.7675C14.6088 4.7675 14.9092 5.06789 14.9092 5.43843C14.9092 5.80897 14.6088 6.10937 14.2383 6.10937Z" fill="currentColor"/></svg>
+                        <div class="flex flex-col text-xs">
+                            <span>Установи для</span>
+                            <span class="font-bold">Android</span>
+                        </div>
+                    </a>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- MOBILE BOTTOM NAV -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-gray-1000 border-t border-gray-800 flex justify-around items-center h-16 lg:hidden" style="z-index:90">
+        <a href="#" class="flex flex-col items-center gap-1 text-gray-400 hover:text-yellow-300 transition-colors px-3 py-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01"/></svg>
+            <span class="text-[10px]">Слоты</span>
+        </a>
+        <a href="#" class="flex flex-col items-center gap-1 text-gray-400 hover:text-yellow-300 transition-colors px-3 py-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span class="text-[10px]">Лайв</span>
+        </a>
+        <a href="#" class="flex flex-col items-center gap-1 text-gray-400 hover:text-yellow-300 transition-colors px-3 py-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+            <span class="text-[10px]">Бонусы</span>
+        </a>
+        <button id="mobileMenuBtn" class="flex flex-col items-center gap-1 text-gray-400 hover:text-yellow-300 transition-colors px-3 py-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <span class="text-[10px]">Поиск</span>
+        </button>
+    </nav>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+    // Game data
+    const newGames = [
+        { title: "Royal Easter", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1774547337625_Royal%20Easter.png", provider: "BGaming" },
+        { title: "Sugar Merge Up", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1774956329210_Sugar%20Merge%20Up.png", provider: "BGaming" },
+        { title: "CULT.", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1774380352197_CULT..png", provider: "PragmaticPlay" },
+        { title: "Rice & Riches", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/provider-images/40b80ddb44da4b56f6c1b8bc773290e2a2d885d0.png", provider: "Mascot" },
+        { title: "Mummyland Treasures", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1773146257298_mummyland%20treasures.png", provider: "Belatra" },
+        { title: "Mummy Mines", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1773145823707_Mummy%20Mines.png", provider: "Belatra" },
+        { title: "Olympus Rivals", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1772619649399_Olympus%20Rivals.png", provider: "AmigoGaming" },
+        { title: "Sloteus Gold", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1772787068294_Sloteus%20Gold.png", provider: "Endorphina" },
+        { title: "Fruit Invaders", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1772786751790_Fruit%20Invaders.png", provider: "AmigoGaming" },
+        { title: "Crown Coins", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1772787121807_Crown%20Coins.png", provider: "Endorphina" },
+        { title: "Mummy's Jewels 100", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1772618423154_Mummy%27s%20Jewels%20100.png", provider: "PragmaticPlay" },
+        { title: "Sultans Fortune", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1772469618158_Sultans%20Fortune.png", provider: "KAGaming" },
+        { title: "Gold Canyon", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1772197713078_Gold%20Canyon.png", provider: "Betsoft" },
+        { title: "Burning Hell 3000", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1776331271139_Prerelease%20Burning%20Hell%203000%20Degrees%20-%20Endorphina%20%28Kush%29_Cover.png", provider: "Endorphina" },
+        { title: "Jewel Boost Reels", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1776330309133_Jewel%20Boost%20Reels.png", provider: "Mascot" },
+    ];
+
+    const topGames = [
+        { title: "Striking Diamond 3", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1773224174735_STRIKING%20DIAMOND%203_%20RUNNING%20WINS%E2%84%A2.png", provider: "Fugaso" },
+        { title: "Mega Thunder", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1772469217665_MEGA%20THUNDER_%20RUNNING%20WINS%E2%84%A2%20X-SERIES.png", provider: "Fugaso" },
+        { title: "Atomic Coins 2", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1773652542163_Atomic%20Coins%202_%20Running%20Wins.png", provider: "Fugaso" },
+        { title: "Bonanza Billion Xtreme", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1773304000730_Bonanza%20Billion%20Xtreme.png", provider: "BGaming" },
+        { title: "Merge Up 2", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1773139236882_Merge%20Up%202.png", provider: "BGaming" },
+        { title: "Mystery Heist", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1772625264502_Mystery%20Heist.png", provider: "BGaming" },
+        { title: "Starlight Princess 1000", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1775227276744_Starlight%20Princess%201000.png", provider: "PragmaticPlay" },
+        { title: "Sweet Rush Bonanza", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1775227415737_Sweet%20Rush%20Bonanza.png", provider: "PragmaticPlay" },
+        { title: "Haunted Crypt", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1775227483630_Haunted%20Crypt.png", provider: "PragmaticPlay" },
+        { title: "Knights vs Barbarians", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1775227565797_Knights%20vs%20Barbarians.png", provider: "PragmaticPlay" },
+        { title: "Fortune Bags", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1772629280571_Fortune%20Bags.png", provider: "AmigoGaming" },
+        { title: "Friar Tuck's INN", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1772787663882_Friar%20Tuck%27s%20INN.png", provider: "Mascot" },
+    ];
+
+    const liveGames = [
+        { title: "VIP Blackjack 1", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1772617568209_vip%20blackjack%201.png", provider: "PragmaticPlayLive" },
+        { title: "Mega Baccarat", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1772617501175_mega%20baccarat.png", provider: "PragmaticPlayLive" },
+        { title: "Crazy Time A", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1772617217055_Crazy%20Time%20A.png", provider: "Evolution" },
+        { title: "Super Sic Bo", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1772620057114_Super%20Sic%20Bo.png", provider: "Evolution" },
+        { title: "Lightning Baccarat", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1772620702667_Lightning%20Baccarat.png", provider: "Evolution" },
+        { title: "Infinite Blackjack", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1772621156727_Infinite%20Blackjack.png", provider: "Evolution" },
+        { title: "Speed Baccarat 1", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1772620801179_Speed%20Baccarat%201.png", provider: "PragmaticPlayLive" },
+        { title: "Craps", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1772620120004_Craps.png", provider: "Evolution" },
+    ];
+
+    function createGameCard(game) {
+        return `
+            <div class="group relative mb-2 cursor-pointer overflow-hidden rounded-2xl border-2 border-gray-600 bg-gray-1000 game-card-shadow transition-all duration-300 hover:border-yellow-300">
+                <div class="aspect-[0.85] overflow-hidden">
+                    <img src="${game.img}" alt="${game.title}" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110" onerror="this.src='http://static.photos/gaming/320x240/1'"/>
+                </div>
+                <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-2 pt-8">
+                    <p class="text-xs font-bold text-white truncate">${game.title}</p>
+                    <p class="text-[10px] text-gray-400">${game.provider}</p>
+                </div>
+                <div class="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button class="btn-gold px-4 py-2 text-xs rounded-xl">Играть</button>
+                </div>
+            </div>
+        `;
+    }
+
+    function renderGames(containerId, games) {
+        const container = document.getElementById(containerId);
+        if (container) {
+            container.innerHTML = games.map(createGameCard).join('');
+        }
+    }
+
+    // Render all game sections
+    renderGames('newGamesGrid', newGames);
+    renderGames('topGamesGrid', topGames);
+    renderGames('liveGamesGrid', liveGames);
+
+    // Live Wins
+    const liveWinsContainer = document.getElementById('liveWinsContainer');
+    const gameNames = ['Sweet Bonanza', 'Gates of Olympus', 'Big Bass Bonanza', 'Starlight Princess', 'Sugar Rush', 'Book of Dead', 'Reactoonz', 'Fire Joker', 'Dog House', 'Money Train', 'Fruit Party', 'Gems Bonanza'];
+    const players = ['Игрок***23', 'Игрок***77', 'Игрок***41', 'Игрок***99', 'Игрок***12', 'Игрок***55', 'Игрок***88', 'Игрок***64'];
+
+    function generateLiveWin() {
+        const game = gameNames[Math.floor(Math.random() * gameNames.length)];
+        const player = players[Math.floor(Math.random() * players.length)];
+        const amount = (Math.floor(Math.random() * 50000) + 500).toLocaleString('ru-RU');
+        return `
+            <div class="live-win-pulse flex items-center gap-2 rounded-full bg-gray-800 border border-gray-700 px-3 py-1.5 text-xs whitespace-nowrap">
+                <span class="text-green-400 font-bold">${amount} ₽</span>
+                <span class="text-gray-400">${player}</span>
+                <span class="text-gray-500">•</span>
+                <span class="text-yellow-300">${game}</span>
+            </div>
+        `;
+    }
+
+    function refreshLiveWins() {
+        if (liveWinsContainer) {
+            let html = '';
+            for (let i = 0; i < 8; i++) {
+                html += generateLiveWin();
+            }
+            liveWinsContainer.innerHTML = html;
+        }
+    }
+    refreshLiveWins();
+    setInterval(refreshLiveWins, 5000);
+
+    // SEO Toggle
+    const seoToggle = document.getElementById('seoToggle');
+    const seoContent = document.getElementById('seoContent');
+    const seoOverlay = document.getElementById('seoOverlay');
+    const seoArrow = document.getElementById('seoArrow');
+    let seoExpanded = false;
+
+    seoToggle.addEventListener('click', () => {
+        seoExpanded = !seoExpanded;
+        if (seoExpanded) {
+            seoContent.classList.remove('seo-collapsed');
+            seoContent.classList.add('seo-expanded');
+            seoOverlay.style.background = 'none';
+            seoToggle.innerHTML = `Свернуть <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="transition-all duration-300 [&_path]:fill-gray-50 rotate-180"><path d="M17.92 8.17969H11.69H6.07999C5.11999 8.17969 4.63999 9.33969 5.31999 10.0197L10.5 15.1997C11.33 16.0297 12.68 16.0297 13.51 15.1997L15.48 13.2297L18.69 10.0197C19.36 9.33969 18.88 8.17969 17.92 8.17969Z" fill="#BDD9D4"/></svg>`;
+        } else {
+            seoContent.classList.add('seo-collapsed');
+            seoContent.classList.remove('seo-expanded');
+            seoOverlay.style.background = 'linear-gradient(360deg, #0B0B0B 25%, transparent 85%)';
+            seoToggle.innerHTML = `Развернуть <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="transition-all duration-300 [&_path]:fill-gray-50"><path d="M17.92 8.17969H11.69H6.07999C5.11999 8.17969 4.63999 9.33969 5.31999 10.0197L10.5 15.1997C11.33 16.0297 12.68 16.0297 13.51 15.1997L15.48 13.2297L18.69 10.0197C19.36 9.33969 18.88 8.17969 17.92 8.17969Z" fill="#BDD9D4"/></svg>`;
+        }
+    });
+
+    // Mobile sidebar
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileSidebar = document.getElementById('mobileSidebar');
+    const mobileSidebarPanel = document.getElementById('mobileSidebarPanel');
+    const closeSidebar = document.getElementById('closeSidebar');
+
+    function openMobileSidebar() {
+        mobileSidebar.classList.remove('invisible', 'opacity-0');
+        mobileSidebar.classList.add('visible', 'opacity-100');
+        setTimeout(() => {
+            mobileSidebarPanel.style.right = '0';
+        }, 10);
+    }
+
+    function closeMobileSidebar() {
+        mobileSidebarPanel.style.right = '-100%';
+        setTimeout(() => {
+            mobileSidebar.classList.add('invisible', 'opacity-0');
+            mobileSidebar.classList.remove('visible', 'opacity-100');
+        }, 300);
+    }
+
+    if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileSidebar);
+    if (closeSidebar) closeSidebar.addEventListener('click', closeMobileSidebar);
+    if (mobileSidebar) mobileSidebar.addEventListener('click', (e) => {
+        if (e.target === mobileSidebar) closeMobileSidebar();
+    });
+
+    // Category tabs active state
+    document.querySelectorAll('.category-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.category-tab').forEach(t => {
+                t.classList.remove('border-yellow-300', 'bg-gray-700');
+                t.classList.add('border-gray-600', 'bg-gray-800');
+            });
+            tab.classList.add('border-yellow-300', 'bg-gray-700');
+            tab.classList.remove('border-gray-600', 'bg-gray-800');
+        });
+    });
+
+    // Initialize Lucide icons
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
+    </script>
+</body>
+</html>
