@@ -1,4 +1,15 @@
-    const newGames = [
+window.tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                gray: { 850: '#1a1a2e', 900: '#111827', 1000: '#0B0B0B' },
+                eva: { green: '#017D63', teal: '#BDD9D4', gold: '#FFD679' }
+            },
+            fontFamily: { unbounded: ['Unbounded', 'sans-serif'], inter: ['Inter', 'sans-serif'] }
+        }
+    }
+};
+const newGames = [
         { title: "Royal Easter", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1774547337625_Royal%20Easter.png", provider: "BGaming" },
         { title: "Sugar Merge Up", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1774956329210_Sugar%20Merge%20Up.png", provider: "BGaming" },
         { title: "CULT.", img: "https://backend-eva-client-bucket.s3.eu-central-1.amazonaws.com/image/1774380352197_CULT..png", provider: "PragmaticPlay" },
