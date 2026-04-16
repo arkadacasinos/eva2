@@ -42,62 +42,49 @@
     </script>
     <style>
         .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }        
         .bg-green-gradient {
             background: linear-gradient(180deg, rgba(11,60,50,0.6) 0%, rgba(11,30,25,0.8) 100%);
-        }
-        
+        }       
         .game-card-shadow {
             box-shadow: 0px 8px 0px 0px #1f2937;
-        }
-        
+        }        
         .game-card-shadow:hover {
             box-shadow: 0px 8px 0px 0px #fb923c;
-        }
-        
+        }        
         .header-blur {
             background: linear-gradient(to bottom, #0B0B0B 50%, transparent);
-        }
-        
+        }      
         .gold-gradient {
             background: linear-gradient(to bottom, #fef9c3, #eab308);
-        }
-        
+        }       
         .gold-gradient-text {
             background: linear-gradient(to bottom, #fef9c3, #eab308);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-        }
-        
+        }       
         .feature-card {
             background: linear-gradient(180deg, rgba(11,60,50,0.6) 0%, rgba(11,30,25,0.8) 100%);
-        }
-        
+        }      
         .divider-line {
             background: linear-gradient(to right, transparent, #fde047, transparent);
-        }
-        
+        }       
         .sidebar-item:hover .sidebar-icon {
             filter: brightness(1.2);
-        }
-        
+        }     
         .slider-container {
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
-        }
-        
+        }        
         .slider-container > * {
             scroll-snap-align: start;
-        }
-        
+        }       
         .hero-section {
             background-image: url('header-bg.webp');
             background-size: cover;
             background-position: center;
-        }
-        
+        }       
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
@@ -105,26 +92,21 @@
         
         .float-animation {
             animation: float 3s ease-in-out infinite;
-        }
-        
+        }     
         @keyframes slideIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
-        }
-        
+        }       
         .slide-in {
             animation: slideIn 0.5s ease-out forwards;
-        }
-        
+        }       
         .live-win-pulse {
             animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-        
+        }      
         @keyframes pulse {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.7; }
         }
-
         .btn-gold {
             background: linear-gradient(to bottom, #fef9c3, #eab308);
             color: #111827;
@@ -135,8 +117,7 @@
         }
         .btn-gold:hover {
             background: #facc15;
-        }
-        
+        }       
         .btn-outline {
             border: 1px solid #fde68a;
             background: #111827;
@@ -149,20 +130,17 @@
         .btn-outline:hover {
             border-color: #fef3c7;
         }
-
         .game-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
             gap: 1rem;
-        }
-        
+        }       
         @media (min-width: 768px) {
             .game-grid {
                 grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
                 gap: 1.25rem;
             }
         }
-
         .banner-slider {
             display: flex;
             overflow-x: auto;
@@ -174,7 +152,6 @@
             scroll-snap-align: center;
             flex-shrink: 0;
         }
-
         .seo-collapsed {
             max-height: 12rem;
             overflow: hidden;
@@ -185,34 +162,24 @@
     </style>
 </head>
 <body class="bg-gray-1000 text-gray-50 font-inter antialiased">
-
-    <!-- HEADER -->
-    <header class="sticky top-0 flex h-18 w-full flex-col header-blur p-4 -mb-10" style="z-index:81">
-        <div class="flex h-full items-center justify-between gap-0 lg:gap-4">
-            <!-- Burger (desktop) -->
-            <button id="burgerBtn" class="relative cursor-pointer items-center justify-center rounded-full border-none bg-transparent p-0 outline-none hidden size-10 lg:flex">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 17 15" fill="none">
-                    <path d="M0 1.5C0 0.671573 0.671573 0 1.5 0H15.5C16.3284 0 17 0.671573 17 1.5C17 2.32843 16.3284 3 15.5 3H1.5C0.671573 3 0 2.32843 0 1.5Z" fill="#BDD9D4"/>
-                    <path d="M0 7.5C0 6.67157 0.671573 6 1.5 6H15.5C16.3284 6 17 6.67157 17 7.5C17 8.32843 16.3284 9 15.5 9H1.5C0.671573 9 0 8.32843 0 7.5Z" fill="#BDD9D4"/>
-                    <path d="M0 13.5C0 12.6716 0.671573 12 1.5 12H15.5C16.3284 12 17 12.6716 17 13.5C17 14.3284 16.3284 15 15.5 15H1.5C0.671573 15 0 14.3284 0 13.5Z" fill="#BDD9D4"/>
-                </svg>
-            </button>
-            <!-- Logo -->
-            <button class="flex w-16 shrink-0 cursor-pointer items-center justify-center lg:w-22">
-                <svg xmlns="http://www.w3.org/2000/svg" width="49" height="34" viewBox="0 0 49 34" fill="none">
-                    <path d="M7.3642 5.71441C4.2261 10.1131 7.28948 11.5151 9.21343 11.6663C3.38555 13.3668 -3.45102 21.5294 1.98461 24.5337C7.42024 27.538 19.076 19.4321 18.0674 15.9176C17.8017 14.9922 15.7698 17.5048 12.6317 19.4321C9.91447 21.1009 3.70267 22.3178 6.63572 17.5048C9.1574 13.3668 15.4896 11.8363 16.2181 11.6663C17.2828 11.4177 18.5156 8.64728 16.7785 9.17217C12.4636 10.4759 10.6144 9.39891 11.567 7.01816C12.5196 4.6374 17.563 2.31334 19.4122 2.37002C21.2615 2.42671 19.8605 4.01387 18.7398 5.0342C21.4856 5.54436 23.8952 3.5604 23.4469 1.12296C22.9986 -1.31447 11.2868 0.216008 7.3642 5.71441Z" fill="white"/>
-                    <path d="M23.6711 8.49196C23.503 8.09517 21.99 7.58501 19.6364 9.00212C20.7011 13.3101 17.1707 20.6225 20.8692 20.6225C25.6884 20.6225 29.9473 12.7433 30.956 9.90907C31.8137 7.49899 30.7878 5.71442 27.986 7.18822C27.8739 11.3829 23.9513 16.938 23.2228 17.0513C22.4943 17.1647 24.2715 9.90907 23.6711 8.49196Z" fill="white"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M44.2368 7.01816C43.0974 9.85238 41.0651 15.6229 42.0514 16.031C42.7987 16.3403 43.5872 15.9205 44.1798 15.605C44.5647 15.4001 44.8669 15.2392 45.0213 15.3508C45.4136 15.6342 43.3963 18.9786 40.8746 18.6385C38.3529 18.2984 38.1287 16.938 38.2408 16.031C37.4189 17.108 35.1924 19.228 32.8612 19.092C29.9473 18.9219 28.7705 14.954 31.9646 10.4759C35.1588 5.99784 38.8012 5.71441 40.4823 7.24489C40.8746 6.28126 42.0514 6.05452 44.2368 7.01816ZM34.9906 16.031C36.8959 16.031 39.0067 11.0239 39.7538 8.66201C37.2487 8.0989 35.905 10.0531 35.0084 11.357L34.9906 11.3829C34.0941 12.6866 33.0854 16.031 34.9906 16.031Z" fill="white"/>
-                    <path d="M0.527635 34C14.1111 24.9758 38.5397 21.2649 49 20.5091C29.3645 19.0126 10.5957 25.2895 3.66573 28.615C2.32083 29.8053 0.751785 32.4128 0.527635 34Z" fill="#FFD679"/>
-                </svg>
-            </button>
-            <!-- Auth buttons -->
-            <div class="flex w-full justify-end gap-2">
-                <button class="btn-outline m-0.5 flex cursor-pointer items-center justify-center font-bold text-xs h-10 gap-2 rounded-2xl px-4 py-2">Вход</button>
-                <button class="btn-gold m-0.5 flex cursor-pointer items-center justify-center font-bold text-xs h-10 gap-2 rounded-2xl px-4 py-2">Регистрация</button>
-            </div>
+<header class="sticky top-0 flex h-18 w-full flex-col header-blur p-4 -mb-10" style="z-index:81">
+    <div class="flex h-full items-center justify-between gap-0 lg:gap-4">
+        <button id="burgerBtn" class="relative cursor-pointer items-center justify-center rounded-full border-none bg-transparent p-0 outline-none hidden size-10 lg:flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 17 15" fill="none">
+                <path d="M0 1.5C0 0.671573 0.671573 0 1.5 0H15.5C16.3284 0 17 0.671573 17 1.5C17 2.32843 16.3284 3 15.5 3H1.5C0.671573 3 0 2.32843 0 1.5Z" fill="#BDD9D4"/>
+                <path d="M0 7.5C0 6.67157 0.671573 6 1.5 6H15.5C16.3284 6 17 6.67157 17 7.5C17 8.32843 16.3284 9 15.5 9H1.5C0.671573 9 0 8.32843 0 7.5Z" fill="#BDD9D4"/>
+                <path d="M0 13.5C0 12.6716 0.671573 12 1.5 12H15.5C16.3284 12 17 12.6716 17 13.5C17 14.3284 16.3284 15 15.5 15H1.5C0.671573 15 0 14.3284 0 13.5Z" fill="#BDD9D4"/>
+            </svg>
+        </button>
+        <a href="/" class="flex w-16 shrink-0 cursor-pointer items-center justify-center lg:w-22">
+            <img src="image/evalogo.svg" alt="Eva Casino" class="h-auto w-full object-contain">
+        </a>
+        <div class="flex w-full justify-end gap-2">
+            <button class="btn-outline m-0.5 flex cursor-pointer items-center justify-center font-bold text-xs h-10 gap-2 rounded-2xl px-4 py-2">Вход</button>
+            <button class="btn-gold m-0.5 flex cursor-pointer items-center justify-center font-bold text-xs h-10 gap-2 rounded-2xl px-4 py-2">Регистрация</button>
         </div>
-    </header>
+    </div>
+</header>
 
     <div class="flex">
         <!-- SIDEBAR (Desktop) -->
