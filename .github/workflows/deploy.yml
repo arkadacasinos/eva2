@@ -17,4 +17,3 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FENIX_FINAL }}'
           channelId: live
           projectId: fenix-casino
-          site: evacasino
