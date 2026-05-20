@@ -8,14 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Deploy to Surge
+      - name: Deploy
         run: |
-          # ВНИМАНИЕ: Тут я изменил домен на уникальный
-          # Проверь, чтобы в GitHub Secrets были именно SURGE_LOGIN и SURGE_TOKEN
-          npx surge . evacasino.surge.sh --token ${{ secrets.SURGE_TOKEN }} --login ${{ secrets.SURGE_LOGIN }}
+          # Мы добавим рандомное число к домену, чтобы 100% не было повторов
+          # Проверь, чтобы секреты назывались SURGE_LOGIN и SURGE_TOKEN
+          npx surge . evacasino-${{ github.run_number }}.surge.sh --token ${{ secrets.SURGE_TOKEN }} --login ${{ secrets.SURGE_LOGIN }}
